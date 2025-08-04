@@ -1,6 +1,5 @@
 import streamlit as st
 import numpy as np
-import cv2
 from tensorflow.keras.models import load_model
 from PIL import Image
 from tensorflow.keras.losses import MeanSquaredError
@@ -43,4 +42,5 @@ if uploaded_file is not None:
     if st.button('Predict'):
         gender, age = predict_image(image)
         st.success(f"Predicted Gender: **{gender}**")
+
         st.success(f"Predicted Age: **{age} years**")
