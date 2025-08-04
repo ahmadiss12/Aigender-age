@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-from tensorflow.keras.models import load_model
+from tensorflow import load_model
 from PIL import Image
 from tensorflow.keras.losses import MeanSquaredError
 
@@ -44,3 +44,4 @@ if uploaded_file is not None:
         st.success(f"Predicted Gender: **{gender}**")
 
         st.success(f"Predicted Age: **{age} years**")
+
