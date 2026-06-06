@@ -1,0 +1,43 @@
+name: Python smoke test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
+
+      - name: Run tests
+        run: pytest
+
+      - name: Compile source
+        run: python -m compileall app.py prediction.py
+
+      - name: Check model artifacts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          for model_path in (Path("age_model.h5"), Path("gender_model.h5")):
+              if not model_path.exists():
+                  raise SystemExit(f"Missing model file: {model_path}")
+              if model_path.stat().st_size == 0:
+                  raise SystemExit(f"Empty model file: {model_path}")
+          PY
