@@ -2,10 +2,6 @@
 
 A compact Streamlit application that estimates gender and age from an uploaded face image using two pretrained Keras model artifacts.
 
-## Portfolio Decision
-
-Keep this repository as a small AI deployment demo. It is not strong enough to represent a full machine-learning project by itself because the training notebook, dataset details, and validated evaluation metrics are not included. After this cleanup, it is useful as a focused example of deploying existing computer-vision models behind a simple web interface.
-
 ## What This Project Shows
 
 - Streamlit interface for uploading an image and displaying predictions.
