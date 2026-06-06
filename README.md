@@ -74,16 +74,3 @@ python -m compileall app.py prediction.py
 ## Metrics Status
 
 This repository contains model artifacts but does not include the original training data, evaluation split, training notebook, or validation report. Because of that, the README does not claim accuracy, mean absolute error, or fairness metrics.
-
-For a stronger job-ready AI portfolio project, add:
-
-- Dataset description and preprocessing pipeline.
-- Training notebook or training script.
-- Gender accuracy, precision, recall, F1 score, and confusion matrix.
-- Age mean absolute error and age-bucket error analysis.
-- Evaluation examples across lighting, pose, image quality, and demographic groups.
-- A short limitations section explaining bias and responsible-use concerns.
-
-## Limitations
-
-This demo should not be used for identity verification, hiring decisions, access control, medical use, or any high-stakes age or gender decision. It is a portfolio demo for model deployment and inference UI work.
